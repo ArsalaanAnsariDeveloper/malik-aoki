@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
 
         body {
             background-color: black;
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans */
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+            /* Comic Sans with fallback */
             color: #00FF00;
             text-align: center;
             margin: 0;
@@ -18,7 +20,11 @@
 
         h1 {
             color: #FFD700;
-            margin-top: 50px;
+            margin-top: 20px;
+            font-size: 24px;
+            /* Smaller font size for mobile */
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+            /* Comic Sans */
         }
 
         .game-container {
@@ -26,48 +32,59 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-top: 50px;
+            margin-top: 20px;
+            padding: 10px;
         }
 
         .images {
             display: flex;
-            justify-content: space-around;
+            flex-wrap: wrap;
+            /* Allow images to wrap on smaller screens */
+            justify-content: center;
             margin-top: 20px;
         }
 
         .images img {
             border: 4px solid #FFD700;
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            /* Smaller image size for mobile */
+            height: 100px;
             cursor: pointer;
             transition: transform 0.2s;
+            margin: 10px;
+            /* Spacing between images */
         }
 
         .images img:hover {
             transform: scale(1.1);
         }
 
-        #score {
-            margin-top: 30px;
+        #score,
+        #round {
+            margin-top: 20px;
             color: #00FF00;
+            font-size: 18px;
+            /* Adjusted font size */
         }
 
         #round {
-            margin-top: 10px;
             color: #FFD700;
         }
 
         .neon-button {
             background-color: #ff00ff;
             border: 2px solid #ff00ff;
-            padding: 10px 30px;
-            font-size: 18px;
+            padding: 10px 20px;
+            /* Smaller padding for mobile */
+            font-size: 16px;
+            /* Adjusted font size */
             color: white;
             cursor: pointer;
             text-transform: uppercase;
             transition: all 0.2s;
             margin-top: 20px;
-            font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            /* Comic Sans */
         }
 
         .neon-button:hover {
@@ -77,11 +94,16 @@
         }
 
         .feedback-gif {
-            display: none; /* Hidden at the start */
+            display: none;
+            /* Hidden at the start */
             margin-top: 20px;
+            max-width: 100%;
+            /* Ensure GIFs don't overflow */
+            height: auto;
         }
     </style>
 </head>
+
 <body onload="startGame()">
     <h1>Who's That? Malik Drabla or Steve Aoki!</h1>
     <div class="game-container">
@@ -199,4 +221,5 @@
         }
     </script>
 </body>
+
 </html>
